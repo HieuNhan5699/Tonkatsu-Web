@@ -60,28 +60,35 @@
             letter-spacing: 2px;
         }
 
-        /* --- NAVIGATION --- */
+        /* --- NAVIGATION (SỬA LẠI ĐỂ LUÔN NẰM NGANG) --- */
         nav {
             background-color: rgba(26, 26, 26, 0.95);
-            padding: 15px;
-            text-align: center;
+            padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
             backdrop-filter: blur(10px);
             border-bottom: 1px solid #333;
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            
+            /* Flexbox để dàn ngang */
+            display: flex;
+            justify-content: center; /* Căn giữa */
+            align-items: center;
+            flex-wrap: wrap; /* Cho phép xuống dòng nếu màn hình quá bé nhưng vẫn giữ hàng ngang */
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 15px; /* Khoảng cách giữa các chữ */
             font-size: 1.1rem;
             font-weight: bold;
             text-transform: uppercase;
             transition: all 0.3s;
             position: relative;
+            display: inline-block; /* Quan trọng: Giữ nằm ngang */
+            white-space: nowrap; /* Không ngắt dòng chữ */
         }
 
         nav a:hover {
@@ -365,8 +372,17 @@
         /* --- RESPONSIVE MOBILE --- */
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
-            nav a { display: block; margin: 10px 0; }
             .section-title { font-size: 1.5rem; }
+            
+            /* Chỉnh menu trên điện thoại: Giữ ngang, giảm kích thước */
+            nav {
+                justify-content: center;
+            }
+            nav a { 
+                margin: 0 8px; /* Giảm khoảng cách */
+                font-size: 0.9rem; /* Giảm cỡ chữ */
+                display: inline-block;
+            }
         }
     </style>
 </head>
@@ -497,8 +513,7 @@
             <h2 class="section-title">Nội Quy Bang Hội</h2>
             <div class="rules-box">
                 <ul class="rules-list">
-                    <li><i class="fas fa-check-circle"></i> <strong>Offline quá 3 ngày:</strong> Không phép sẽ bị mời ra khỏi bang (Kick).</li>
-                    <li><i class="fas fa-check-circle"></i> <strong>Đua giải (League):</strong> Bắt buộc tham gia đầy đủ các lượt trận (Turns).</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>Offline quá 7 ngày:</strong> Không phép sẽ bị mời ra khỏi bang (Kick).</li>
                     <li><i class="fas fa-check-circle"></i> <strong>Văn hóa:</strong> Tôn trọng anh em, không toxic, thắng không kiêu bại không nản.</li>
                     <li><i class="fas fa-check-circle"></i> <strong>Discord:</strong> Khuyến khích tham gia Discord để chém gió và nhận thông báo.</li>
                 </ul>
@@ -538,9 +553,9 @@
         <div style="font-size: 1.5rem; margin-bottom: 20px;">
             <a href="#" style="color:white; margin:0 10px;"><i class="fab fa-facebook"></i></a>
             <a href="https://discord.gg/48WhC5De" style="color:white; margin:0 10px;"><i class="fab fa-discord"></i></a>
-            <a href="#" style="color:white; margin:0 10px;"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.youtube.com/@TonkatsuFcmobile" target="_blank" style="color:white; margin:0 10px;"><i class="fab fa-youtube"></i></a>
         </div>
-        <p style="color: #666; font-size: 0.9rem;">© 2025 Tonkatsu FC. Designed with ❤️ by Gemini.</p>
+        <p style="color: #666; font-size: 0.9rem;">© 2025 Tonkatsu FC. Designed with ❤️ by Hieu Nhan.</p>
     </footer>
 
     <div id="joinModal" class="modal">
