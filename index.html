@@ -437,7 +437,7 @@
                 Không tìm thấy thành viên này. Chắc đi lạc rồi!
             </div>
 
-            <script>
+<script>
                 // --- CẤU HÌNH: Link Google Sheet của bạn ---
                 const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQH5JDT1qp9SM-8qMpZoo7ZvrBNCKqHtizQiH65TfGAFkXPTj1zIFkM97yxyi_IFborGGUuohOTy0Hw/pub?output=csv"; 
 
@@ -446,33 +446,38 @@
                 // Hàm lấy dữ liệu
                 async function fetchMembers() {
                     const container = document.getElementById('memberList');
-                    container.innerHTML = '<div style="color:#aaa; text-align:center; width:100%; grid-column: 1/-1;">⏳ Đang cập nhật dữ liệu từ trụ sở...</div>';
+                    // Giữ chiều cao container để tránh trang web bị giật khi đang load
+                    container.style.minHeight = "200px"; 
+                    container.innerHTML = '<div style="color:#aaa; text-align:center; width:100%; grid-column: 1/-1; padding-top: 50px;">⏳ Đang triệu hồi các tuyển thủ...</div>';
 
                     try {
                         const response = await fetch(sheetURL);
                         if (!response.ok) throw new Error("Không tải được file");
                         const data = await response.text();
                         
-                        // Xử lý dữ liệu CSV
-                        const rows = data.split('\n').slice(1); // Bỏ dòng tiêu đề
+                        const rows = data.split('\n').slice(1); 
                         membersData = rows.map(row => {
                             const cols = row.split(',');
-                            // Kiểm tra đủ 4 cột
                             if(cols.length >= 4) {
                                 return {
                                     name: cols[0].trim(),
                                     short: cols[1].trim(),
                                     role: cols[2].trim(),
-                                    // Xóa ký tự xuống dòng thừa nếu có
                                     type: cols[3].trim().replace(/(\r\n|\n|\r)/gm, "") 
                                 };
                             }
-                        }).filter(item => item && item.name); // Lọc bỏ dòng lỗi
+                        }).filter(item => item && item.name);
 
                         renderMembers();
+                        
+                        // QUAN TRỌNG: Làm mới hiệu ứng sau khi có dữ liệu
+                        setTimeout(() => {
+                            AOS.refresh(); 
+                        }, 500);
+
                     } catch (error) {
                         console.error(error);
-                        container.innerHTML = '<div style="color:red; text-align:center; grid-column: 1/-1;">❌ Lỗi kết nối! Kiểm tra lại đường link Google Sheet.</div>';
+                        container.innerHTML = '<div style="color:red; text-align:center; grid-column: 1/-1; padding-top: 50px;">❌ Lỗi kết nối! Hãy chạy bằng Live Server hoặc Up lên host nhé.</div>';
                     }
                 }
 
@@ -502,8 +507,13 @@
                             badge = '<div class="ovr-badge">VIP</div>';
                         }
 
+                        // --- SỬA LỖI HIỆU ỨNG TẠI ĐÂY ---
+                        // (index % 6) * 100: Cứ 6 thẻ thì reset độ trễ về 0. 
+                        // Các thẻ sẽ hiện lần lượt từ trái sang phải mỗi hàng, không bị chờ quá lâu.
+                        let delay = (index % 6) * 100;
+
                         htmlContent += `
-                            <div class="player-card" style="${borderStyle}" data-aos="fade-up" data-aos-delay="${index * 30}">
+                            <div class="player-card" style="${borderStyle}" data-aos="fade-up" data-aos-delay="${delay}">
                                 <div class="avatar-container">
                                     <div class="player-avatar" style="${avatarBg}">${member.short}</div>
                                     ${badge}
@@ -514,9 +524,9 @@
                         `;
                     });
 
-                    // Thêm thẻ YOU?
+                    // Thẻ YOU?
                     htmlContent += `
-                        <div class="player-card" style="border-style: dashed; opacity: 0.7;" data-aos="fade-up">
+                        <div class="player-card" style="border-style: dashed; opacity: 0.7;" data-aos="fade-up" data-aos-delay="200">
                             <div class="avatar-container">
                                 <div class="player-avatar" style="background:transparent; border-color:#666; color:#666; font-size:40px;">?</div>
                             </div>
@@ -530,6 +540,8 @@
 
                 window.addEventListener('DOMContentLoaded', fetchMembers);
             </script>
+
+            
         </section>
 
         <hr style="border-color: #333; margin: 50px 0;">
