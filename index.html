@@ -431,75 +431,105 @@
                 <input type="text" id="searchBox" class="search-box" onkeyup="filterMembers()" placeholder="🔍 Nhập tên thành viên để tìm kiếm...">
             </div>
 
-            <div class="squad-grid" id="memberList">
-                
-                <div class="player-card" style="border-color: #f1c40f;" data-aos="fade-up">
-                    <div class="avatar-container"><div class="player-avatar" style="background: #c0392b; color: white;">TG</div><div class="ovr-badge">VIP</div></div>
-                    <div class="player-name">Tonkatsu-Garou</div><div class="player-role vip-role"><i class="fas fa-crown"></i> CHỦ TỊCH</div>
-                </div>
+            <div class="squad-grid" id="memberList"></div>
 
-                <div class="player-card" style="border-color: #e67e22;" data-aos="fade-up">
-                    <div class="avatar-container"><div class="player-avatar" style="background: #2c3e50; color: white;">TB</div><div class="ovr-badge">VIP</div></div>
-                    <div class="player-name">Tonkatsu-Binnn</div><div class="player-role vice-role"><i class="fas fa-star"></i> PHÓ LIÊN ĐOÀN</div>
-                </div>
-
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TC</div></div><div class="player-name">Tonkatsu-Chun</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TK</div></div><div class="player-name">Tonkatsu-Kingen</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">LB</div></div><div class="player-name">longbeta.</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">PV</div></div><div class="player-name">PTV-Vitamin</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">FJ</div></div><div class="player-name">FJX</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">VM</div></div><div class="player-name">VuongManucians</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TY</div></div><div class="player-name">Tonkatsu-yath</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">LJ</div></div><div class="player-name">LFCJoker</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TT</div></div><div class="player-name">Tonkatsu-Tokuda</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">NM</div></div><div class="player-name">NhatMink</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">RL</div></div><div class="player-name">RubyLovesFCM</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">CC</div></div><div class="player-name">cc12ue</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TK</div></div><div class="player-name">Tonkatsu-Kaito</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TE</div></div><div class="player-name">Tonkatsu-Elbicho</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TS</div></div><div class="player-name">Tonkatsu-Sonic</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TL</div></div><div class="player-name">Tonkatsu-LGBT</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">AK</div></div><div class="player-name">Akakua06</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TK</div></div><div class="player-name">Tonkatsu-Ken</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TH</div></div><div class="player-name">Tonkatsu-HuyT95-</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TD</div></div><div class="player-name">Tonkatsu-DaiiIFC</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TP</div></div><div class="player-name">Tonkatsu-Peanut</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TA</div></div><div class="player-name">Tonkatsu-ARtemis</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">GN</div></div><div class="player-name">Gunn3r</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">DB</div></div><div class="player-name">Datbesthoa</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TQ</div></div><div class="player-name">Tonkatsu-QiQi</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TD</div></div><div class="player-name">TriDuxng08</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TM</div></div><div class="player-name">Tonkatsu-ManhDat</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TD</div></div><div class="player-name">toidadenn</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">KG</div></div><div class="player-name">Khoagermany</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TK</div></div><div class="player-name">Tonkatsu-Kiwi</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">VK</div></div><div class="player-name">veokdora</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TC</div></div><div class="player-name">Tuongcoi</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">VV</div></div><div class="player-name">ValentinVacherot</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TV</div></div><div class="player-name">Tonkatsu-Venom</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TB</div></div><div class="player-name">Tonkatsu-Bang</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">MO</div></div><div class="player-name">Mr.Okay</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TR</div></div><div class="player-name">Tonkatsu-Rain7</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">HL</div></div><div class="player-name">HLV99c1</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">PZ</div></div><div class="player-name">Penz</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">LV</div></div><div class="player-name">LuânVV97</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">HC</div></div><div class="player-name">HungChelsea</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">DL</div></div><div class="player-name">duyluatt</div><div class="player-role">Thành Viên</div></div>
-                <div class="player-card"><div class="avatar-container"><div class="player-avatar">TM</div></div><div class="player-name">Tonkatsu-Mingqt</div><div class="player-role">Thành Viên</div></div>
-
-                <div class="player-card" style="border-style: dashed; opacity: 0.7;">
-                    <div class="avatar-container">
-                        <div class="player-avatar" style="background:transparent; border-color:#666; color:#666; font-size:40px;">?</div>
-                    </div>
-                    <div class="player-name">YOU?</div>
-                    <div class="player-role">Gia nhập ngay</div>
-                </div>
-            </div>
-            
             <div id="noResult" style="display:none; text-align:center; padding: 20px; font-size:1.2rem; color:#aaa;">
                 Không tìm thấy thành viên này. Chắc đi lạc rồi!
             </div>
 
+            <script>
+                // --- CẤU HÌNH: Link Google Sheet của bạn ---
+                const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQH5JDT1qp9SM-8qMpZoo7ZvrBNCKqHtizQiH65TfGAFkXPTj1zIFkM97yxyi_IFborGGUuohOTy0Hw/pub?output=csv"; 
+
+                let membersData = [];
+
+                // Hàm lấy dữ liệu
+                async function fetchMembers() {
+                    const container = document.getElementById('memberList');
+                    container.innerHTML = '<div style="color:#aaa; text-align:center; width:100%; grid-column: 1/-1;">⏳ Đang cập nhật dữ liệu từ trụ sở...</div>';
+
+                    try {
+                        const response = await fetch(sheetURL);
+                        if (!response.ok) throw new Error("Không tải được file");
+                        const data = await response.text();
+                        
+                        // Xử lý dữ liệu CSV
+                        const rows = data.split('\n').slice(1); // Bỏ dòng tiêu đề
+                        membersData = rows.map(row => {
+                            const cols = row.split(',');
+                            // Kiểm tra đủ 4 cột
+                            if(cols.length >= 4) {
+                                return {
+                                    name: cols[0].trim(),
+                                    short: cols[1].trim(),
+                                    role: cols[2].trim(),
+                                    // Xóa ký tự xuống dòng thừa nếu có
+                                    type: cols[3].trim().replace(/(\r\n|\n|\r)/gm, "") 
+                                };
+                            }
+                        }).filter(item => item && item.name); // Lọc bỏ dòng lỗi
+
+                        renderMembers();
+                    } catch (error) {
+                        console.error(error);
+                        container.innerHTML = '<div style="color:red; text-align:center; grid-column: 1/-1;">❌ Lỗi kết nối! Kiểm tra lại đường link Google Sheet.</div>';
+                    }
+                }
+
+                // Hàm hiển thị (Render)
+                function renderMembers() {
+                    const container = document.getElementById('memberList');
+                    let htmlContent = '';
+
+                    membersData.forEach((member, index) => {
+                        let borderStyle = '';
+                        let avatarBg = '';
+                        let roleClass = 'player-role';
+                        let icon = '';
+                        let badge = '';
+
+                        if (member.type === 'boss') {
+                            borderStyle = 'border-color: #f1c40f;';
+                            avatarBg = 'background: #c0392b; color: white;';
+                            roleClass += ' vip-role';
+                            icon = '<i class="fas fa-crown"></i> ';
+                            badge = '<div class="ovr-badge">VIP</div>';
+                        } else if (member.type === 'vice') {
+                            borderStyle = 'border-color: #e67e22;';
+                            avatarBg = 'background: #2c3e50; color: white;';
+                            roleClass += ' vice-role';
+                            icon = '<i class="fas fa-star"></i> ';
+                            badge = '<div class="ovr-badge">VIP</div>';
+                        }
+
+                        htmlContent += `
+                            <div class="player-card" style="${borderStyle}" data-aos="fade-up" data-aos-delay="${index * 30}">
+                                <div class="avatar-container">
+                                    <div class="player-avatar" style="${avatarBg}">${member.short}</div>
+                                    ${badge}
+                                </div>
+                                <div class="player-name">${member.name}</div>
+                                <div class="${roleClass}">${icon}${member.role}</div>
+                            </div>
+                        `;
+                    });
+
+                    // Thêm thẻ YOU?
+                    htmlContent += `
+                        <div class="player-card" style="border-style: dashed; opacity: 0.7;" data-aos="fade-up">
+                            <div class="avatar-container">
+                                <div class="player-avatar" style="background:transparent; border-color:#666; color:#666; font-size:40px;">?</div>
+                            </div>
+                            <div class="player-name">YOU?</div>
+                            <div class="player-role">Gia nhập ngay</div>
+                        </div>
+                    `;
+
+                    container.innerHTML = htmlContent;
+                }
+
+                window.addEventListener('DOMContentLoaded', fetchMembers);
+            </script>
         </section>
 
         <hr style="border-color: #333; margin: 50px 0;">
