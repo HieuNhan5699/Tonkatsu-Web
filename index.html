@@ -593,21 +593,44 @@
         
         <section id="contest" data-aos="fade-up">
             <h2 class="section-title">Giải Đấu</h2>
-            <div style="background: #1a1a1a; padding: 30px; border-radius: 10px; border: 1px solid #333; text-align: center;">
-                <i class="fas fa-trophy fa-3x" style="color: var(--accent-color); margin-bottom: 20px;"></i>
-                <h3 style="color: white; margin: 0;">TONKATSU CUP MÙA 1</h3>
-                
-                <div style="margin: 15px 0;">
-                    <span style="background: #27ae60; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem;">
-                        <i class="fas fa-check"></i> ĐÃ KẾT THÚC
-                    </span>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+
+                <div style="background: linear-gradient(135deg, #922c2c 0%, #1a1a1a 100%); padding: 30px; border-radius: 10px; border: 2px solid var(--primary-color); text-align: center; flex: 1; min-width: 300px; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 10px; right: -30px; background: #f1c40f; color: black; font-weight: bold; padding: 5px 40px; transform: rotate(45deg); font-size: 0.8rem;">NEW</div>
+                    
+                    <i class="fas fa-fire fa-3x" style="color: #e74c3c; margin-bottom: 20px; text-shadow: 0 0 10px rgba(231, 76, 60, 0.5);"></i>
+                    <h3 style="color: white; margin: 0; font-size: 1.8rem;">TONKATSU CUP MÙA 2</h3>
+                    <p style="color: #ccc; margin-top: 5px;">"Cuộc chiến vương quyền"</p>
+                    
+                    <div style="margin: 15px 0;">
+                        <span style="background: rgba(255,255,255,0.1); color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem;">
+                            <i class="far fa-clock"></i> Khởi tranh: <b>Tháng 02/2026</b>
+                        </span>
+                    </div>
+
+                    <button class="join-btn" onclick="openSeason2Modal()" style="width: 100%; margin-top: 15px; background-color: var(--primary-color);">
+                        Đăng Ký / Thể Lệ
+                    </button>
                 </div>
 
-                <p style="color: #aaa;">Nhà vô địch đã lộ diện!</p>
-                
-                <button class="join-btn" onclick="openContestModal()" style="padding: 10px 20px; font-size: 1rem; margin-top: 10px; background-color: #f1c40f; color: black;">
-                    <i class="fas fa-crown"></i> Xem Chi Tiết
-                </button>
+                <div style="background: #1a1a1a; padding: 30px; border-radius: 10px; border: 1px solid #444; text-align: center; flex: 1; min-width: 300px; opacity: 0.9;">
+                    <i class="fas fa-trophy fa-3x" style="color: #7f8c8d; margin-bottom: 20px;"></i>
+                    <h3 style="color: #aaa; margin: 0;">TONKATSU CUP MÙA 1</h3>
+                    
+                    <div style="margin: 15px 0;">
+                        <span style="color: #27ae60; font-weight: bold; font-size: 0.9rem;">
+                            <i class="fas fa-check-circle"></i> Đã kết thúc
+                        </span>
+                    </div>
+                    
+                    <p style="color: #666; font-size: 0.9rem;">Nhà vô địch: <b>TÊN NGƯỜI THẮNG</b></p>
+
+                    <button class="join-btn" onclick="openSeason1Modal()" style="width: 100%; margin-top: 15px; background-color: transparent; border: 1px solid #555; padding: 8px;">
+                        Xem Lại Kết Quả
+                    </button>
+                </div>
+
             </div>
         </section>
 
@@ -634,27 +657,45 @@
         </div>
     </div>
 
-    <div id="contestModal" class="modal">
-        <div class="modal-content" style="background: linear-gradient(135deg, #1e1e24 0%, #1a1a1a 100%); padding:30px; border-radius:15px; width:500px; text-align:center; position: relative; border: 1px solid #444;">
-            <span class="close-modal" onclick="closeContestModal()" style="top:10px; right:15px; font-size:30px;">&times;</span>
+  <div id="season2Modal" class="modal">
+        <div class="modal-content" style="background: #1e1e24; padding:30px; border-radius:15px; width:500px; text-align:center; position: relative; border: 2px solid var(--primary-color);">
+            <span class="close-modal" onclick="closeSeason2Modal()" style="top:10px; right:15px; font-size:30px;">&times;</span>
             
-            <h2 style="color:var(--accent-color); border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 20px;">TỔNG KẾT GIẢI ĐẤU</h2>
+            <h2 style="color:var(--primary-color); border-bottom: 1px solid #333; padding-bottom: 10px;">THÔNG TIN MÙA 2</h2>
+            <p style="color: #aaa; font-style: italic;">"Thể thức mới - Kịch tính hơn"</p>
             
-            <div style="background: rgba(241, 196, 15, 0.1); padding: 20px; border-radius: 10px; border: 1px solid var(--accent-color); margin-bottom: 20px; position: relative; overflow: hidden;">
-                <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(241,196,15,0.2) 0%, rgba(0,0,0,0) 70%); animation: rotate 10s infinite linear;"></div>
-                
-                <div style="position: relative; z-index: 1;">
-                    <div style="color: #f1c40f; font-weight: bold; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">
-                        <i class="fas fa-crown"></i> Nhà Vô Địch Mùa 1
-                    </div>
-                    
-                    <img src="https://ui-avatars.com/api/?name=Vua+Pha+Luoi&background=f1c40f&color=000&size=128" 
-                         style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #f1c40f; box-shadow: 0 0 15px rgba(241, 196, 15, 0.5); object-fit: cover; margin-bottom: 10px;">
-                    
-                    <h3 style="font-size: 1.8rem; color: white; margin: 0;">Tonkatsu•Artemis</h3>
-                    <p style="color: #aaa; font-size: 0.9rem;">"Kỹ năng thượng thừa - Bản lĩnh thép"</p>
-                </div>
+            <div style="text-align: left; margin-top: 20px; color: #ddd; line-height: 1.8;">
+                <p>📛 <strong>Số lượng:</strong> 32 - 64 Tuyển thủ (Dự kiến)</p>
+                <p>⚔️ <strong>Thể thức:</strong> Chia bảng tính điểm -> Vòng Knockout.</p>
+                <p>💰 <strong>Giải thưởng:</strong> Đang cập nhật...</p>
+                <p>📅 <strong>Thời gian:</strong> Thứ 7 & CN hàng tuần.</p>
             </div>
+
+            <hr style="border-color: #333; margin: 20px 0;">
+
+            <p style="color: #f1c40f;">Đăng ký tham gia tại Discord của Clan!</p>
+            <a href="https://discord.gg/ftm7DeFatv" target="_blank" class="join-btn" style="display:block; text-decoration:none; margin: 10px auto; width: fit-content;">Vào Discord Đăng Ký</a>
+        </div>
+    </div>
+
+    <div id="season1Modal" class="modal">
+        <div class="modal-content" style="background: linear-gradient(135deg, #1e1e24 0%, #1a1a1a 100%); padding:30px; border-radius:15px; width:500px; text-align:center; position: relative; border: 1px solid #444;">
+            <span class="close-modal" onclick="closeSeason1Modal()" style="top:10px; right:15px; font-size:30px;">&times;</span>
+            
+            <h2 style="color:var(--accent-color); margin-bottom: 20px;">TỔNG KẾT MÙA 1</h2>
+            
+            <div style="border: 1px solid var(--accent-color); padding: 15px; border-radius: 10px; margin-bottom: 20px;">
+                <div style="color: #f1c40f; font-weight: bold; text-transform: uppercase;">
+                    <i class="fas fa-crown"></i> Nhà Vô Địch
+                </div>
+                <img src="https://ui-avatars.com/api/?name=Vua+Pha+Luoi&background=f1c40f&color=000&size=128" 
+                     style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #f1c40f; margin: 10px 0;">
+                <h3 style="color: white; margin: 0;">Tonkatsu•Artemis</h3>
+            </div>
+    
+            <button class="join-btn" onclick="closeSeason1Modal()" style="padding: 8px 30px; background-color: #333; border: 1px solid #555;">Đóng</button>
+        </div>
+    </div>
 
             <div style="text-align: left; margin-top: 20px; color: #ddd; font-size: 0.95rem; border-top: 1px solid #333; padding-top: 15px;">
                 <p><i class="fas fa-history" style="color:var(--primary-color); width: 25px;"></i> <strong>Trạng thái:</strong> <span style="color: #27ae60; font-weight: bold;">Đã kết thúc (Tháng 01/2026)</span></p>
@@ -707,21 +748,34 @@
         }
 
         // 3. Xử lý Modal Đăng ký (Join)
-        function openJoinModal() {
-            document.getElementById('joinModal').style.display = 'flex';
+     // 4. Xử lý Modal Giải Đấu
+        
+        // --- MÙA 2 ---
+        function openSeason2Modal() {
+            document.getElementById('season2Modal').style.display = 'flex';
         }
-        function closeJoinModal() {
-            document.getElementById('joinModal').style.display = 'none';
-        }
-
-        // 4. Xử lý Modal Giải Đấu (Contest)
-        function openContestModal() {
-            document.getElementById('contestModal').style.display = 'flex';
-        }
-        function closeContestModal() {
-            document.getElementById('contestModal').style.display = 'none';
+        function closeSeason2Modal() {
+            document.getElementById('season2Modal').style.display = 'none';
         }
 
+        // --- MÙA 1 ---
+        function openSeason1Modal() {
+            document.getElementById('season1Modal').style.display = 'flex';
+        }
+        function closeSeason1Modal() {
+            document.getElementById('season1Modal').style.display = 'none';
+        }
+
+        // Đóng modal khi bấm ESC (Cập nhật lại)
+        document.onkeydown = function(evt) {
+            evt = evt || window.event;
+            if (evt.keyCode == 27) {
+                closeJoinModal();
+                closeImageModal();
+                closeSeason1Modal(); // Mới
+                closeSeason2Modal(); // Mới
+            }
+        };
         // 5. Xử lý Xem ảnh (Lightbox)
         function viewImage(element) {
             var modal = document.getElementById('imageModal');
