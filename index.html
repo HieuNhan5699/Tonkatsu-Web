@@ -322,6 +322,12 @@
             70% { transform: scale(1.05); box-shadow: 0 0 10px 15px rgba(192, 57, 43, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(192, 57, 43, 0); }
         }
+        
+        /* Hiệu ứng xoay nhẹ cho nền winner */
+        @keyframes rotate {
+            from {transform: rotate(0deg);}
+            to {transform: rotate(360deg);}
+        }
 
         /* 2. ÁP DỤNG VÀO NÚT */
         .join-btn {
@@ -437,7 +443,7 @@
                 Không tìm thấy thành viên này. Chắc đi lạc rồi!
             </div>
 
-<script>
+            <script>
                 // --- CẤU HÌNH: Link Google Sheet của bạn ---
                 const sheetURL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQH5JDT1qp9SM-8qMpZoo7ZvrBNCKqHtizQiH65TfGAFkXPTj1zIFkM97yxyi_IFborGGUuohOTy0Hw/pub?output=csv"; 
 
@@ -509,7 +515,6 @@
 
                         // --- SỬA LỖI HIỆU ỨNG TẠI ĐÂY ---
                         // (index % 6) * 100: Cứ 6 thẻ thì reset độ trễ về 0. 
-                        // Các thẻ sẽ hiện lần lượt từ trái sang phải mỗi hàng, không bị chờ quá lâu.
                         let delay = (index % 6) * 100;
 
                         htmlContent += `
@@ -530,7 +535,7 @@
                             <div class="avatar-container">
                                 <div class="player-avatar" style="background:transparent; border-color:#666; color:#666; font-size:40px;">?</div>
                             </div>
-                            <div class="player-name">YOU?</div>
+                            <div class="player-name">YOU ARE GAY?</div>
                             <div class="player-role">Gia nhập ngay</div>
                         </div>
                     `;
@@ -540,8 +545,6 @@
 
                 window.addEventListener('DOMContentLoaded', fetchMembers);
             </script>
-
-            
         </section>
 
         <hr style="border-color: #333; margin: 50px 0;">
@@ -589,13 +592,22 @@
         <hr style="border-color: #333; margin: 50px 0;">
         
         <section id="contest" data-aos="fade-up">
-            <h2 class="section-title">Giải Đấu Sắp Tới</h2>
+            <h2 class="section-title">Giải Đấu</h2>
             <div style="background: #1a1a1a; padding: 30px; border-radius: 10px; border: 1px solid #333; text-align: center;">
                 <i class="fas fa-trophy fa-3x" style="color: var(--accent-color); margin-bottom: 20px;"></i>
                 <h3 style="color: white; margin: 0;">TONKATSU CUP MÙA 1</h3>
-                <p style="color: #aaa;">Dự kiến khởi tranh: <span style="color: var(--primary-color); font-weight: bold;">Tháng 01/2026</span></p>
-                <p>Thể thức: Solo 1vs1 (Loại trực tiếp)</p>
-                <button class="join-btn" onclick="openContestModal()" style="padding: 10px 20px; font-size: 1rem; margin-top: 10px;">Xem Chi Tiết</button>
+                
+                <div style="margin: 15px 0;">
+                    <span style="background: #27ae60; color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 0.9rem;">
+                        <i class="fas fa-check"></i> ĐÃ KẾT THÚC
+                    </span>
+                </div>
+
+                <p style="color: #aaa;">Nhà vô địch đã lộ diện!</p>
+                
+                <button class="join-btn" onclick="openContestModal()" style="padding: 10px 20px; font-size: 1rem; margin-top: 10px; background-color: #f1c40f; color: black;">
+                    <i class="fas fa-crown"></i> Xem Chi Tiết
+                </button>
             </div>
         </section>
 
@@ -623,27 +635,35 @@
     </div>
 
     <div id="contestModal" class="modal">
-        <div class="modal-content" style="background:#1e1e24; padding:30px; border-radius:10px; width:500px; text-align:left; height:auto; position: relative;">
+        <div class="modal-content" style="background: linear-gradient(135deg, #1e1e24 0%, #1a1a1a 100%); padding:30px; border-radius:15px; width:500px; text-align:center; position: relative; border: 1px solid #444;">
             <span class="close-modal" onclick="closeContestModal()" style="top:10px; right:15px; font-size:30px;">&times;</span>
-            <h2 style="color:var(--accent-color); text-align: center; border-bottom: 2px solid #333; padding-bottom: 10px;">CHI TIẾT GIẢI ĐẤU</h2>
             
-            <div style="margin-top: 20px; color: #ddd;">
-                <p><i class="fas fa-calendar-alt" style="color:var(--primary-color); width: 25px;"></i> <strong>Thời gian:</strong> 20:00 - Thứ 7 hàng tuần (Dự kiến)</p>
-                <p><i class="fas fa-gamepad" style="color:var(--primary-color); width: 25px;"></i> <strong>Thể thức:</strong> BO1 (Chung kết BO3)</p>
-                <p><i class="fas fa-users" style="color:var(--primary-color); width: 25px;"></i> <strong>Số lượng:</strong> 32 Tuyển thủ</p>
+            <h2 style="color:var(--accent-color); border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 20px;">TỔNG KẾT GIẢI ĐẤU</h2>
+            
+            <div style="background: rgba(241, 196, 15, 0.1); padding: 20px; border-radius: 10px; border: 1px solid var(--accent-color); margin-bottom: 20px; position: relative; overflow: hidden;">
+                <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(241,196,15,0.2) 0%, rgba(0,0,0,0) 70%); animation: rotate 10s infinite linear;"></div>
                 
-                <hr style="border-color: #333; margin: 15px 0;">
-                
-                <h3 style="color: var(--accent-color); font-size: 1.2rem;">🏆 CƠ CẤU GIẢI THƯỞNG</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: 8px;">🥇 <strong>Vô Địch:</strong> 1 tỉ vnđ + Role "Vua Phá Lưới"</li>
-                    <li style="margin-bottom: 8px;">🥈 <strong>Á Quân:</strong> 1k fv yêu thương</li>
-                    <li>🥉 <strong>Hạng Ba:</strong> Lời khen từ Chủ Tịch :))</li>
-                </ul>
+                <div style="position: relative; z-index: 1;">
+                    <div style="color: #f1c40f; font-weight: bold; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;">
+                        <i class="fas fa-crown"></i> Nhà Vô Địch Mùa 1
+                    </div>
+                    
+                    <img src="https://ui-avatars.com/api/?name=Vua+Pha+Luoi&background=f1c40f&color=000&size=128" 
+                         style="width: 100px; height: 100px; border-radius: 50%; border: 3px solid #f1c40f; box-shadow: 0 0 15px rgba(241, 196, 15, 0.5); object-fit: cover; margin-bottom: 10px;">
+                    
+                    <h3 style="font-size: 1.8rem; color: white; margin: 0;">TÊN NGƯỜI THẮNG</h3>
+                    <p style="color: #aaa; font-size: 0.9rem;">"Kỹ năng thượng thừa - Bản lĩnh thép"</p>
+                </div>
+            </div>
+
+            <div style="text-align: left; margin-top: 20px; color: #ddd; font-size: 0.95rem; border-top: 1px solid #333; padding-top: 15px;">
+                <p><i class="fas fa-history" style="color:var(--primary-color); width: 25px;"></i> <strong>Trạng thái:</strong> <span style="color: #27ae60; font-weight: bold;">Đã kết thúc (Tháng 01/2026)</span></p>
+                <p><i class="fas fa-gift" style="color:var(--primary-color); width: 25px;"></i> <strong>Tổng giải thưởng:</strong> 1 Tỉ VNĐ</p>
+                <p><i class="fas fa-users" style="color:var(--primary-color); width: 25px;"></i> <strong>Số lượng tham gia:</strong> 32 Tuyển thủ</p>
             </div>
     
-            <div style="text-align: center; margin-top: 20px;">
-                <button class="join-btn" onclick="closeContestModal()" style="padding: 10px 30px;">Đã Hiểu</button>
+            <div style="text-align: center; margin-top: 25px;">
+                <button class="join-btn" onclick="closeContestModal()" style="padding: 8px 30px; font-size: 1rem; margin-top:0; background-color: #333; border: 1px solid #555;">Đóng</button>
             </div>
         </div>
     </div>
